@@ -1,0 +1,852 @@
+# ai_curriculum_data.py
+university_requirements = {
+    'mandatory': 16,
+    'elective': 9,
+    'total': 25
+}
+faculty_requirements = {
+    'mandatory': 24,
+    'elective': 0,
+    'total': 24,
+    'courses': [
+        {'course_number': 'MATH 101', 'course_title': 'Calculus I', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': '-'},
+        {'course_number': 'MATH 102', 'course_title': 'Calculus II', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Passing MATH 101'},
+        {'course_number': 'MATH 241', 'course_title': 'Discrete Mathematics', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': '-'},
+        {'course_number': 'CS 101', 'course_title': 'Intro to Programming', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CIS 99 or Concurrent'},
+        {'course_number': 'SE 103', 'course_title': 'Intro to Information Technology', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Concurrent with CS 101'},
+        {'course_number': 'SE 112', 'course_title': 'Intro to Object-Oriented', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Passing CS 101'},
+        {'course_number': 'CS 211', 'course_title': 'Data Structures', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'MATH 241 + passing SE112'},
+        {'course_number': 'CIS 221', 'course_title': 'Database Systems', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 211'},
+        {'course_number': 'AI 240', 'course_title': 'Intro to AI', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284'},
+        {'course_number': 'AI 244', 'course_title': 'AI Programming', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 101'},
+        {'course_number': 'CS 375', 'course_title': 'OS', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284'},
+        {'course_number': 'AI 328', 'course_title': 'Big Data Processing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CIS 221'},
+        {'course_number': 'AI 249', 'course_title': 'ML', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 244'},
+        {'course_number': 'AI 342', 'course_title': 'DL', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 249'},
+        {'course_number': 'AI 356', 'course_title': 'Information Retrieval', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 249'},
+        {'course_number': 'AI 375', 'course_title': 'Digital Image Processing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284 + Math 140'},
+        {'course_number': 'AI 378', 'course_title': 'Smart Systems', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 375'},
+        {'course_number': 'AI 380', 'course_title': 'Optimization Algorithms', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284 + AI 244'},
+        {'course_number': 'AI 445', 'course_title': 'NLP', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 446', 'course_title': 'Audio Signal Processing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 447', 'course_title': 'Computer Vision', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342 + AI 375'},
+        {'course_number': 'AI 448', 'course_title': 'Deep Reinforcement Learning', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 471', 'course_title': 'AI for Games', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 474', 'course_title': 'Extended Reality', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 447'},
+        {'course_number': 'AI 477', 'course_title': 'Robotics', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 490', 'course_title': 'Internship', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Passing 90 CHs'},
+        {'course_number': 'AI 491', 'course_title': 'Graduation Project (1)', 'credit_hours': 2, 'weekly_hours': 2, 'prerequisite': 'Passing 90 CHs'},
+        {'course_number': 'AI 492', 'course_title': 'Graduation Project (2)', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 491'},
+        {'course_number': 'Math 140', 'course_title': 'Linear Algebra', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'MATH 101'},
+        {'course_number': 'CS 284', 'course_title': 'Analysis and Design of Algo', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 211 + Math 233'},
+        {'course_number': 'AI 350', 'course_title': 'Data Science', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 328'},
+        {'course_number': 'Math 233', 'course_title': 'Probability & Statistics', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Math 102'},
+        {'course_number': 'CIS 201', 'course_title': 'Intro to Web Design', 'credit_hours': 1, 'weekly_hours': 0, 'prerequisite': 'SE 112'},
+        {'course_number': 'CIS 203', 'course_title': 'Ethics', 'credit_hours': 2, 'weekly_hours': 2, 'prerequisite': '-'}
+    ]
+}
+
+departmental_requirements = {
+    'mandatory': 74,
+    'elective': 9,
+    'total': 83,
+    'courses': [
+        {'course_number': 'AI 240', 'course_title': 'Intro to AI', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284'},
+        {'course_number': 'AI 244', 'course_title': 'AI Programming', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 101'},
+        {'course_number': 'CS 375', 'course_title': 'OS', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284'},
+        {'course_number': 'AI 328', 'course_title': 'Big Data Processing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CIS 221'},
+        {'course_number': 'AI 249', 'course_title': 'ML', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 244'},
+        {'course_number': 'AI 342', 'course_title': 'DL', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 249'},
+        {'course_number': 'AI 356', 'course_title': 'Information Retrieval', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 249'},
+        {'course_number': 'AI 375', 'course_title': 'Digital Image Processing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284 + Math 140'},
+        {'course_number': 'AI 378', 'course_title': 'Smart Systems', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 375'},
+        {'course_number': 'AI 380', 'course_title': 'Optimization Algorithms', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284 + AI 244'},
+        {'course_number': 'AI 445', 'course_title': 'NLP', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 446', 'course_title': 'Audio Signal Processing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 447', 'course_title': 'Computer Vision', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342 + AI 375'},
+        {'course_number': 'AI 448', 'course_title': 'Deep Reinforcement Learning', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 471', 'course_title': 'AI for Games', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 474', 'course_title': 'Extended Reality', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 447'},
+        {'course_number': 'AI 477', 'course_title': 'Robotics', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 490', 'course_title': 'Internship', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Passing 90 CHs'},
+        {'course_number': 'AI 491', 'course_title': 'Graduation Project (1)', 'credit_hours': 2, 'weekly_hours': 2, 'prerequisite': 'Passing 90 CHs'},
+        {'course_number': 'AI 492', 'course_title': 'Graduation Project (2)', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 491'},
+        {'course_number': 'Math 140', 'course_title': 'Linear Algebra', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'MATH 101'},
+        {'course_number': 'CS 284', 'course_title': 'Analysis and Design of Algo', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 211 + Math 233'},
+        {'course_number': 'AI 350', 'course_title': 'Data Science', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 328'},
+        {'course_number': 'Math 233', 'course_title': 'Probability & Statistics', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Math 102'},
+        {'course_number': 'CIS 201', 'course_title': 'Intro to Web Design', 'credit_hours': 1, 'weekly_hours': 0, 'prerequisite': 'SE 112'},
+        {'course_number': 'CIS 203', 'course_title': 'Ethics', 'credit_hours': 2, 'weekly_hours': 2, 'prerequisite': '-'},
+
+    ]
+}
+departmental_elective_requirements = {
+    'elective': 9,
+    'courses': [
+        {'course_number': 'AI 365', 'course_title': 'Information Security and Privacy', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 240'},
+        {'course_number': 'AI 421', 'course_title': 'Cloud Computing', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 328'},
+        {'course_number': 'AI 442', 'course_title': 'AI Planning', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 380'},
+        {'course_number': 'AI 443', 'course_title': 'Multi-Agent Systems', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 471'},
+        {'course_number': 'AI 452', 'course_title': 'Semantic Web', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CIS 201'},
+        {'course_number': 'AI 453', 'course_title': 'Social Networks Analysis', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 356'},
+        {'course_number': 'AI 454', 'course_title': 'Business Intelligence', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 350'},
+        {'course_number': 'AI 455', 'course_title': 'Pattern Recognition', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 457', 'course_title': 'Recommender Systems', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 378'},
+        {'course_number': 'AI 481', 'course_title': 'AI for Medicine and Healthcare', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 482', 'course_title': 'AI for Computational Biology', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 483', 'course_title': 'AI for Financial and Industrial App', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 342'},
+        {'course_number': 'AI 484', 'course_title': 'Fuzzy Logic', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'CS 284'},
+        {'course_number': 'AI 485', 'course_title': 'Drones and Autonomous Sys', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'AI 477'},
+        {'course_number': 'AI 495-I', 'course_title': 'Special Topics in Artificial Intelligence (1)', 'credit_hours': 1, 'weekly_hours': 1, 'prerequisite': 'Dept. Approval'},
+        {'course_number': 'AI 495-II', 'course_title': 'Special Topics in Artificial Intelligence (2)', 'credit_hours': 2, 'weekly_hours': 2, 'prerequisite': 'Dept. Approval'},
+        {'course_number': 'AI 495-III', 'course_title': 'Special Topics in Artificial Intelligence (3)', 'credit_hours': 3, 'weekly_hours': 3, 'prerequisite': 'Dept. Approval'},
+
+    ]
+}
+course_numbering_convention = {
+    'AI': 'Artificial Intelligence',
+    'Digit': {
+        'Meaning': 'Explanation',
+        'Hundreds': {
+            '1': 'First year',
+            '2': 'Second year',
+            '3': 'Third year',
+            '4': 'Fourth year',
+        },
+        'Tens': {
+            '0': 'Basic Principles',
+            '1': 'Programming',
+            '2': 'Big Data',
+            '3': 'Mathematics and Statistics',
+            '4': 'Learning',
+            '5': 'Applications',
+            '6': 'Security',
+            '7': 'Hardware Components',
+            '8': 'Specialized Topics',
+            '9': 'Special Topics, Project, Internship',
+        },
+        'Ones': 'Course sequence number within the subject area',
+    },
+}
+
+# 1st Year 1st Semester
+first_year_first_semester = [
+    {'course_number': 'CS 101', 'course_name': 'Introduction to Programming', 'credit_hours': 3, 'prerequisite': 'CIS 99'},
+    {'course_number': 'CS 101', 'course_name': 'Introduction to Programming (Practical)', 'credit_hours': 0, 'prerequisite': 'Concurrent with CS101'},
+    {'course_number': 'SE 103', 'course_name': 'Introduction to IT', 'credit_hours': 3, 'prerequisite': 'CS 101'},
+    {'course_number': 'Math 101', 'course_name': 'Calculus I', 'credit_hours': 3, 'prerequisite': '-'},
+    {'course_number': 'Math 241', 'course_name': 'Discrete Mathematics', 'credit_hours': 3, 'prerequisite': '-'},
+    {'course_number': 'HSS 110', 'course_name': 'Leader and Social Responsibility', 'credit_hours': 3, 'prerequisite': '-'},
+    {'course_number': 'LG 101', 'course_name': 'Communication Skills in English', 'credit_hours': 3, 'prerequisite': 'Pass LG 099'},
+    {'Total': 18},
+]
+# 2nd Semester
+first_year_second_semester = [
+    {'course_number': 'SE 112', 'course_name': 'Introduction to OOP', 'credit_hours': 3, 'prerequisite': 'Passing CS 102'},
+    {'course_number': 'SE 112', 'course_name': 'Intro to OOP (Practical)', 'credit_hours': 0, 'prerequisite': 'Concurrent with SE 112'},
+    {'course_number': 'CS 211', 'course_name': 'Data Structures', 'credit_hours': 3, 'prerequisite': 'Math 241 and passing SE 112'},
+    {'course_number': 'Math 140', 'course_name': 'Linear Algebra', 'credit_hours': 3, 'prerequisite': 'Math 101'},
+    {'course_number': 'Math 102', 'course_name': 'Calculus 2', 'credit_hours': 3, 'prerequisite': 'Math 101'},
+    {'course_number': 'CIS 203', 'course_name': 'Communication and Professional Ethics', 'credit_hours': 2, 'prerequisite': '-'},
+    {'Total': 14},
+]
+# 2nd Year 1st Semester
+second_year_first_semester = [
+    {'course_number': 'CS 284', 'course_name': 'Analysis and Design of Algorithms', 'credit_hours': 3, 'prerequisite': 'CS 211 + Math 233'},
+    {'course_number': 'Math 233', 'course_name': 'Probability & Statistics', 'credit_hours': 3, 'prerequisite': 'Math 102'},
+    {'course_number': 'CIS 201', 'course_name': 'Intro to Web Design', 'credit_hours': 1, 'prerequisite': 'SE 112'},
+    {'course_number': 'CIS 221', 'course_name': 'Fundamentals of Database Systems', 'credit_hours': 3, 'prerequisite': 'CS 211'},
+    {'course_number': 'ARB 102', 'course_name': 'Communication Skills in Arabic', 'credit_hours': 3, 'prerequisite': '-'},
+    {'course_number': 'University Elective', 'credit_hours': 3, 'prerequisite': '-'},
+    {'Total': 16},
+]
+# 2nd Semester
+second_year_second_semester = [
+    {'course_number': 'AI 240', 'course_name': 'Intro to Artificial Intelligence', 'credit_hours': 3, 'prerequisite': 'CS 284'},
+    {'course_number': 'AI 244', 'course_name': 'Ai Programming', 'credit_hours': 3, 'prerequisite': 'CS 101'},
+    {'course_number': 'AI 244', 'course_name': 'Ai Programming (Practical)', 'credit_hours': 0, 'prerequisite': 'Concurrent with AI 244'},
+    {'course_number': 'MS 100', 'course_name': 'Military Science', 'credit_hours': 3, 'prerequisite': '-'},
+    {'course_number': 'AI 249', 'course_name': 'Machine Learning', 'credit_hours': 3, 'prerequisite': 'AI 244 Or Concurrent'},
+    {'course_number': 'LG 103', 'course_name': 'Life Skills', 'credit_hours': 2, 'prerequisite': '-'},
+    {'course_number': 'University Elective', 'credit_hours': 3, 'prerequisite': '-'},
+    {'Total': 17},
+]
+# 3rd Year 1st Semester
+third_year_first_semester = [
+    {'course_number': 'AI 375', 'course_name': 'Operating Systems', 'credit_hours': 3, 'prerequisite': 'CS 284'},
+    {'course_number': 'AI 328', 'course_name': 'Big Data Processing', 'credit_hours': 3, 'prerequisite': 'CIS 221'},
+    {'course_number': 'AI 375', 'course_name': 'Digital Image Processing', 'credit_hours': 3, 'prerequisite': 'CS 284 + Math 140'},
+    {'course_number': 'AI 380', 'course_name': 'Optimization Algorithms', 'credit_hours': 3, 'prerequisite': 'CS 284 + AI 244'},
+    {'course_number': 'HSS 119', 'course_name': 'Entrepreneurship and Innovation', 'credit_hours': 2, 'prerequisite': '-'},
+    {'course_number': 'University Elective', 'credit_hours': 3, 'prerequisite': '-'},
+]
+# 2nd Semester
+third_year_second_semester = [
+    {'course_number': 'AI 350', 'course_name': 'Data Science', 'credit_hours': 3, 'prerequisite': 'AI 328'},
+    {'course_number': 'AI 342', 'course_name': 'Deep Learning', 'credit_hours': 3, 'prerequisite': 'AI 249'},
+    {'course_number': 'AI 356', 'course_name': 'Information Retrieval', 'credit_hours': 3, 'prerequisite': 'AI 249'},
+    {'course_number': 'AI 378', 'course_name': 'Smart Systems', 'credit_hours': 3, 'prerequisite': 'CS 375'},
+    {'course_number': 'Department Elective', 'credit_hours': 3, 'prerequisite': '-'},
+]
+# 3rd Semester (Summer)
+summer_semester = [
+    {'course_number': 'AI 490', 'course_name': 'Internship', 'credit_hours': 3, 'prerequisite': 'Passing 90 CHs or department approval'},
+]
+# 4th Year 1st Semester
+fourth_year_first_semester = [
+    {'course_number': 'AI 445', 'course_name': 'Natural Language Processing', 'credit_hours': 3, 'prerequisite': 'AI 342'},
+    {'course_number': 'AI 447', 'course_name': 'Computer Vision', 'credit_hours': 3, 'prerequisite': 'AI 342 + AI 375'},
+    {'course_number': 'AI 471', 'course_name': 'Artificial Intelligence for Games', 'credit_hours': 3, 'prerequisite': 'AI 342'},
+    {'course_number': 'AI 477', 'course_name': 'Robotics', 'credit_hours': 3, 'prerequisite': 'AI 342'},
+    {'course_number': 'AI 491', 'course_name': 'Graduation Project (1)', 'credit_hours': 2, 'prerequisite': 'Passing 90 CHs'},
+    {'course_number': 'Department Elective', 'credit_hours': 3, 'prerequisite': '-'},
+]
+# 2nd Semester
+fourth_year_second_semester = [
+    {'course_number': 'AI 446', 'course_name': 'Audio and Speech Processing', 'credit_hours': 3, 'prerequisite': 'AI 342'},
+    {'course_number': 'AI 448', 'course_name': 'Deep Reinforcement Learning', 'credit_hours': 3, 'prerequisite': 'AI 342'},
+    {'course_number': 'AI 474', 'course_name': 'Extended Reality', 'credit_hours': 3, 'prerequisite': 'AI 447'},
+    {'course_number': 'AI 492', 'course_name': 'Graduation Project (2)', 'credit_hours': 3, 'prerequisite': 'AI 491'},
+    {'course_number': 'Department Elective', 'credit_hours': 3, 'prerequisite': '-'},
+]
+
+# Course 1
+intro_to_ai = {
+    'course_name': 'Introduction to Artificial Intelligence',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CS 284',
+    'description': (
+        "An introduction to the basic knowledge representation, problem solving, and learning methods of artificial "
+        "intelligence. Topics include specific AI techniques, a range of application areas, and connections between AI and "
+        "other areas of study (i.e., philosophy, psychology). Techniques may include heuristic search, automated reasoning, "
+        "machine learning, deliberative planning, and behavior-based agent control. Application areas include robotics, games, "
+        "knowledge representation, and natural language processing."
+    ),
+}
+
+# Course 2
+ai_programming = {
+    'course_name': 'Artificial Intelligence Programming',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CS 101',
+    'description': (
+        "This course provides the fundamentals of the Python programming language, along with programming best practices. "
+        "Students will learn about several libraries in Python that solve many computational problems related to AI and "
+        "Machine Learning (ML) tasks such as obtaining and handling real-world messy data, performing simple data "
+        "manipulation, analysis and visualization, and building ML models. Through this course, students will gain an in-depth "
+        "understanding of 'AI in practice' where students will gain practical experience in how to apply several techniques in "
+        "practical tasks using the programming language Python and popular Python AI libraries."
+    ),
+}
+
+# Course 3
+machine_learning = {
+    'course_name': 'Machine Learning',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 244 Or Concurrent',
+    'description': (
+        "This course provides a broad introduction to principles, algorithms, and applications of machine learning. Topics "
+        "include a basic review of vital mathematical, statistical and algorithmic concepts, supervised learning, curve fitting, "
+        "linear models for regression (basic functions, gradient search, bias-variance, Bayesian regression, and evidence "
+        "approximation), linear models for classification such as decision trees, discrimination functions, probabilistic "
+        "generative models, probabilistic discriminative models, Laplace approximation. The course will also discuss Bayesian "
+        "logistic regression, linear prediction with regularization, Lasso and Elastic Net, feature selection and model selection. "
+        "Other topics include supervised classification, KNN theory, principal component analysis, and support vector machines."
+    ),
+}
+
+# Course 4
+big_data_processing = {
+    'course_name': 'Big Data Processing',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CIS 221',
+    'description': (
+        "This course addresses distributed storage and large data set processing focusing on architectures and technologies. "
+        "Students will experience various data genres and management tools appropriate for processing big data. Students will "
+        "learn all about Hadoop and its framework consisting of tools for distributed storage and data processing, to an open-source "
+        "framework while addressing distributed storage and large data set processing. Additionally, students learn about other "
+        "elements such as NoSQL databases, and competing technologies. Through guided hands-on tutorials, students will become "
+        "familiar with techniques using real-time and semi-structured data examples in order to design business solutions to manage "
+        "big data projects."
+    ),
+}
+
+# Course 5
+deep_learning = {
+    'course_name': 'Deep Learning',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 249',
+    'description': (
+        "This course will introduce students to the concept of deep learning and its key principles. The course covers feedforward "
+        "neural networks, convolutional neural networks (object classification, object detection, face verification, style "
+        "transfer), recurrent neural network (natural language processing, speech recognition), sequence modeling, techniques to "
+        "improve neural networks (regularization and optimizations, hyperparameter tuning, deep learning frameworks), generative "
+        "adversarial networks, deep reinforcement learning, and adversarial attacks. It is expected by the end of the course, students "
+        "will be able to build, train and apply fully connected deep neural networks, and to know how to implement efficient neural "
+        "networks using the most popular libraries for deep learning such as Keras, PyTorch, and TensorFlow."
+    ),
+}
+
+# Course 6
+data_science = {
+    'course_name': 'Data Science',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 328',
+    'description': (
+        "This course provides students with key concepts in data science and suitable programming skills to support these concepts. "
+        "Specific topics include: definition of data science and its relationships with other fields; importance of data science and "
+        "its driving forces; data acquisition and exploration; data profiling; data cleaning; data quality; feature selection taking "
+        "into consideration structured and unstructured data; model selection; result analysis and visualization of data and results. "
+        "Many Python packages necessary for data science and analytics are also covered."
+    ),
+}
+
+# Course 7
+information_retrieval = {
+    'course_name': 'Information Retrieval',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 249',
+    'description': (
+        "This course aims to understand information retrieval algorithms and identify challenging problems on the Web. Topics include "
+        "keyword-based retrieval, file structures, thesaurus construction, lexical analysis, stemming, term weighting, associative "
+        "indexing, Boolean operations, string searching and matching techniques, document modeling and inverted index construction "
+        "and compression, vector space model and ranking methods, probabilistic and language models, evaluation methods, relevance "
+        "feedback, query expansion. The course also covers the web search fundamentals, example of topics includes web search engine "
+        "architecture, web crawling and indexing, web structure, and usage analytics."
+    ),
+}
+
+# Course 8
+information_security_and_privacy = {
+    'course_name': 'Information Security and Privacy',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 240',
+    'description': (
+        "This course covers the fundamental issues and first principles of security and information assurance. Security policies, "
+        "models and mechanisms related to confidentiality, integrity, authentication, identification, and availability issues "
+        "related to information and information systems. Basics of cryptography such as key management and digital signatures, etc. "
+        "And network security such as PKI, IPsec, intrusion detection and prevention. Risk management, security assurance and secure "
+        "design principles. Issues such as organizational security policy, legal and ethical issues in security, standards and "
+        "methodologies for security evaluation and certification."
+    ),
+}
+
+# Course 9
+digital_image_processing = {
+    'course_name': 'Digital Image Processing',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CS 284 + Math 140',
+    'description': (
+        "Image sampling and quantization, color, point operations, segmentation, morphological image processing, linear image "
+        "filtering and correlation, image transforms, eigenimages, multiresolution image processing, noise reduction and restoration, "
+        "feature extraction and recognition tasks, image registration. Emphasis is on the general principles of image processing. "
+        "Students learn to apply material by implementing and investigating image processing algorithms."
+    ),
+}
+
+# Course 10
+smart_systems = {
+    'course_name': 'Smart Systems',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CS 375',
+    'description': (
+        "This course aims at preparing students for the smart cities and Internet of Things (IoT) markets. The course introduces "
+        "the building blocks of IoT systems and the underlying technologies that drive the IoT revolution. Part of the course will "
+        "deal with developing real-world IoT applications/mobile application prototypes from the sensing level to the end-user "
+        "applications to solve existing problems in society. Moreover, the course utilizes AI algorithms to build models and "
+        "large-scale systems to solve problems such as telco management, intelligent transportation, urban planning, real-time crowd "
+        "management, retail intelligence, and industry 4.0 using various data sources."
+    ),
+}
+
+# Course 11
+optimization_algorithms = {
+    'course_name': 'Optimization Algorithms',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CS 284 + AI 244',
+    'description': (
+        "This course introduces the principal of optimization problems and algorithms. The course covers the most fundamental "
+        "concepts in the field of optimization techniques including heuristics, metaheuristics, and evolutionary optimization "
+        "techniques. The course will also show how to tackle several difficulties in different optimization problems. By the end of "
+        "the course, students need to be able to identify and implement the main components of an optimization problem in a variety "
+        "of applications including Machine Learning, Data Science, Neural Networks, and Deep Learning."
+    ),
+}
+
+# Course 12
+cloud_computing = {
+    'course_name': 'Cloud Computing',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 328',
+    'description': (
+        "The course gives an introduction to cloud computing, its techniques, and main components. It covers the topics of data "
+        "centers, virtualization, cloud storage and programming models. It discusses the motivating factors, benefits, challenges, "
+        "and service models. It describes several concepts behind data center design and management. It also presents virtualization, "
+        "data distribution, durability, consistency, and redundancy."
+    ),
+}
+
+# Course 13
+ai_planning = {
+    'course_name': 'Artificial Intelligence Planning',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 272',
+    'description': (
+        "Planning is a fundamental part of intelligent systems. It is the task of finding a sequence of actions needed to achieve a "
+        "system its goals while optimizing the overall performance. Intelligent planners can reason about the effects of actions, and "
+        "efficiently searching the space of possible plans. Topics include action and plan representation, reactive systems, hierarchical "
+        "and abstraction planning, case-based planning, machine learning in planning, multi-agent planning, Artificial Intelligence Planning "
+        "for Robots, interacting with the environment, planning under uncertainty, plan execution, partial plans and plan refinement, "
+        "task network and decomposition, Graphplan Algorithm, Pattern Databases, plan generation, planning modeling languages, and applications "
+        "of planning."
+    ),
+}
+
+# 14) AI 443: Multi-Agent Systems
+multi_agent_systems = {
+    'course_number': 'AI 443',
+    'course_name': 'Multi-Agent Systems',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 471',
+    'description': (
+        "A multi-agent system is composed of multiple autonomous entities such as sensor networks and robots, "
+        "with distributed information, computational ability, and possibly ramified interests. This course serves as "
+        "the foundation of multi-agent systems, including distributed optimization and problem solving. Topics include "
+        "an introduction to game theory, basic game representations and solution concepts, models of cooperation, "
+        "extensive form games, repeated games, security games, coalitional and Bayesian games, multi-agent learning, "
+        "voting, and problem-solving in networks, communication, social choice, mechanism design, auctions, and negotiation."
+    ),
+}
+
+# 15) AI 445: Natural Language Processing
+natural_language_processing = {
+    'course_number': 'AI 445',
+    'course_name': 'Natural Language Processing',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "Natural language processing (NLP) is a crucial part of artificial intelligence (AI), modeling how people share "
+        "information. This course explores current statistical and deep learning techniques for the automatic analysis "
+        "of natural (human) language data. Topics: language modeling, word-sense disambiguation, morphological analysis, "
+        "part-of-speech tagging, syntactic parsing, semantic interpretation, co-reference resolution, and discourse analysis. "
+        "Applications: information extraction, question answering, speech recognition, interactive dialog systems, machine "
+        "translation, sentiment analysis, and summarization."
+    ),
+}
+
+# 16) AI 446: Audio and Speech Processing
+audio_and_speech_processing = {
+    'course_number': 'AI 446',
+    'course_name': 'Audio and Speech Processing',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course aims to give an elementary introduction to concepts, methods and applications of audio signal processing "
+        "with a focus on speech. The course covers traditional as well as deep learning methods for automatic speech recognition, "
+        "speech synthesis, affect detection, dialogue management, semantic interpretation, text generation, and applications to "
+        "digital assistants and spoken language understanding systems."
+    ),
+}
+
+# 17) AI 447: Computer Vision
+computer_vision = {
+    'course_number': 'AI 447',
+    'course_name': 'Computer Vision',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342 + AI 375',
+    'description': (
+        "This course provides a comprehensive introduction to computer vision. It is therefore primarily concerned with the "
+        "problem of capturing and making sense of digital images. The field draws heavily on many major subjects including "
+        "digital image processing, artificial intelligence, feature extraction and selection, image classification and recognition, "
+        "and scene understanding. It also discusses various emerging applications of deep learning in computer vision, such as: "
+        "Attention and transformers, Object detection and recognition, Image segmentation, image/video classification, "
+        "Generative models (GANs, VAEs, autoregressive), and object tracking."
+    ),
+}
+
+# 18) AI 448: Deep Reinforcement Learning
+deep_reinforcement_learning = {
+    'course_number': 'AI 448',
+    'course_name': 'Deep Reinforcement Learning',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course introduces deep reinforcement learning (RL), one of the most modern techniques of machine learning. "
+        "Topics include: key features of RL, basics of RL, MDPs, and POMDP, sample complexity analyses of tabular RL, "
+        "policy gradient and iteration, off-policy evaluation, TD learning and Q-learning, linear value approximation, "
+        "proximal policy optimization, bandit, batch offline and online RL, various actor/critic algorithms, PAC exploration "
+        "theory (tabular and function approximation)."
+    ),
+}
+# Course 18
+semantic_web = {
+    'course_number': 'AI 452',
+    'course_name': 'Semantic Web',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CIS 201',
+    'description': (
+        "An introduction to semantic web technologies and their applications. "
+        "Student will learn different aspects of web semantic representation and "
+        "how to reason about data using ontologies. The course will introduce the "
+        "existing technologies and how to apply semantic web technologies to current "
+        "and potential real-world applications. Topics include the semantic web "
+        "activity of W3C, semantic modeling and ontology representation, semantic web "
+        "applications, logic for the semantic web, ontologies modeling and design "
+        "using resource description framework (RDF) and web ontology language (OWL), "
+        "and semantic web applications."
+    ),
+}
+
+# Course 19
+social_networks_analysis = {
+    'course_number': 'AI 453',
+    'course_name': 'Social Networks Analysis',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 356',
+    'description': (
+        "An introduction to the concepts and methods of social network analysis. "
+        "This course will introduce students to different techniques of extracting "
+        "and analyze large-scale network data and how to reason about it. Students will "
+        "also learn about social networks structure, dynamics and evolution. Topics include "
+        "methods for social network analysis, network models, graph representation, graph "
+        "traversal algorithms, graph mining, link analysis and network community detection, "
+        "information propagation on the web, and recommendations systems. Student will also "
+        "learn how to use some social network analysis packages/tools."
+    ),
+}
+# Course 20
+business_intelligence = {
+    'course_number': 'AI 454',
+    'course_name': 'Business Intelligence',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 350',
+    'description': (
+        "This course provides an introduction to the concepts of business intelligence "
+        "and explores how business problems can be solved and then applying data mining "
+        "tools and analytics to gain new insights into organizational operations. This course "
+        "will put an emphasis on the differences between types of reporting and analytics, "
+        "enterprise data warehousing, data management systems, decision support systems, "
+        "knowledge management systems and big data. Case studies are used to explore the use "
+        "of application software, web tools, success and limitations of BI as well as technical "
+        "and social issues."
+    ),
+}
+
+# Course 21
+pattern_recognition = {
+    'course_number': 'AI 455',
+    'course_name': 'Pattern Recognition',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course covers pattern recognition techniques that are concerned with the "
+        "theory and algorithms of putting abstract objects, e.g., measurements made on "
+        "physical objects, into categories. Typically, the categories are assumed to be "
+        "known in advance, although there are techniques to learn the categories (clustering). "
+        "Topics include pattern recognition systems, preprocessing and feature extraction, "
+        "training methods, maximum likelihood and Bayesian parameter estimation, linear "
+        "discriminant, perceptron learning, optimization by Gradient descent, theories of "
+        "supervised and unsupervised learning techniques with applications, object classification "
+        "and recognition, artificial neural networks, mixture modeling, expectation-maximization, "
+        "hidden Markov models, Viterbi algorithm, Baum-Welch algorithm, linear dynamical systems, "
+        "Kalman filtering, reinforcement learning with human interaction, and combination of multiple "
+        "classifiers."
+    ),
+}
+
+# Course 22
+recommender_systems = {
+    'course_number': 'AI 457',
+    'course_name': 'Recommender Systems',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 378',
+    'description': (
+        "This course will introduce students to a range of approaches for building recommender systems. "
+        "Topics are collaborative, content-based, knowledge-based, and hybrid algorithms, filtering "
+        "techniques, dimension reduction techniques for the user-product preference space, candidate "
+        "generation, scoring, and re-ranking, and evaluation and metrics for recommender systems. Students "
+        "will implement recommendation algorithms using an open-source toolkit and conduct experimental evaluations."
+    ),
+}
+# Course 23
+ai_for_games = {
+    'course_number': 'AI 471',
+    'course_name': 'Artificial Intelligence for Games',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "The purpose of this course is to familiarize students with issues and techniques of Artificial "
+        "Intelligence (AI) for computer games. Topics include mathematical background (a review that includes "
+        "some basics, trigonometry, vectors, local space and world space), physics background (a review that "
+        "includes topics like time, distance, mass, position, velocity, acceleration and force), state-driven "
+        "agent design, create autonomously moving game agents, application as a simulation, designing the AI "
+        "(players, teams, states, motions, maps, projectiles, triggers, decision making, path planning, perception, "
+        "target selection, as well as strategies), graphs and graph search algorithms, scripting (creating a scripted "
+        "finite state machine), goal-driven agent behavior, and fuzzy logic, all within the context of computer games."
+    ),
+}
+
+# Course 24
+extended_reality = {
+    'course_number': 'AI 474',
+    'course_name': 'Extended Reality',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 447',
+    'description': (
+        "The course focuses on designing for Extended Reality (XR), which encompasses Virtual Reality (VR), Augmented "
+        "Reality (AR), and Mixed Reality (MR). XR changes the way we think about designing digital interfaces because "
+        "we are no longer constrained by two-dimensional (2D) space. The course focuses on integrating virtual intelligence "
+        "into XR spaces to create dynamic user interfaces and personalized experiences. It starts with introducing the principles "
+        "of human-computer interaction and the design and evaluation of user interfaces and related guidelines, standards, and "
+        "specification languages before introducing XR concepts and technologies covering tools in AR, VR and MR and related "
+        "topics (spatial computing, differences between modalities, marker and face detection, Unity AR libraries, SDKs and "
+        "location-based related computation), the future of XR, ethical AI design and digital objects, and respond to live briefs "
+        "from industry partners (Teams engage in a process of critical making to create innovative, proof-of-concept prototypes)."
+    ),
+}
+
+# Course 25
+robotics = {
+    'course_number': 'AI 477',
+    'course_name': 'Robotics',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course covers the fundamental elements of mobile robot systems from a computational standpoint and provides "
+        "an introduction to the design and implementation of intelligent mobile robot systems. Topics include mobile robots "
+        "control (sensing, vision, control, motion, kinematics theory, navigation, localization and perception), software "
+        "control architectures, sensor interpretation, map building and navigation, computer vision and image processing, "
+        "camera calibrations and multi-camera view, mobile robotics, multi-robot systems, task planning, agent architectures, "
+        "and reasoning. Students program a small mobile robot to perform simple tasks in real-world environments."
+    ),
+}
+
+# Course 26
+ai_for_medicine = {
+    'course_number': 'AI 481',
+    'course_name': 'Artificial Intelligence for Medicine and Healthcare',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course introduces the different applications of AI in the health care domain with a focus on medical data analytics. "
+        "Data analytics has emerged as a promising tool for solving problems across many Health-related disciplines. This course "
+        "provides a clear understanding of the analytical techniques currently available to solve several health problems. The course "
+        "explains the novel techniques for acquiring, handling, retrieving, and making the best use of Health data. The course will "
+        "bridge the gap between computer scientists and the domain-specific medical experts and help students gain more knowledge in this domain."
+    ),
+}
+
+# Course 27
+ai_for_computational_biology = {
+    'course_number': 'AI 482',
+    'course_name': 'Artificial Intelligence for Computational Biology and Bioinformatics',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course introduces artificial intelligence (AI) in bioinformatics, computational biology, and biomedicine. It covers "
+        "topics related to complex biological analysis, the application of AI principles, and the integration of diverse biological "
+        "content through different AI methods and technologies. The course will cover how to apply AI techniques such as data modelling, "
+        "machine learning, deep learning, statistical methods, and data mining in Bioinformatics and Biomedicines problems. The course explores "
+        "how to apply AI in bioinformatics technologies into several topics such as DNA, RNA, and protein structure and folding problems, drug "
+        "discovery, digital health, genetics, and metabolic pathways."
+    ),
+}
+
+# Course 28
+ai_for_financial_and_industrial = {
+    'course_number': 'AI 483',
+    'course_name': 'Artificial Intelligence for Financial and Industrial Applications',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 342',
+    'description': (
+        "This course explores the role of emerging AI algorithms and techniques on financial decisions. This course introduces the basics "
+        "of AI and its impact on financial services. It gives an overview of the potential implementations of AI within an organization. The course "
+        "explores a deep dive into determining if the business is prepared for the future using several AI techniques. The course provides hands-on "
+        "financial forecasting experience using several AI and machine learning techniques and grasp forecasting techniques on specific real-world financial data."
+    ),
+}
+
+# Course 29
+fuzzy_logic = {
+    'course_number': 'AI 484',
+    'course_name': 'Fuzzy Logic',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'CS 284',
+    'description': (
+        "Introduction to fuzzy sets, fuzzy relations; fuzzy measures; fuzzy logic and approximate reasoning; applications of fuzzy systems in "
+        "pattern recognition, control, and signal processing. The course aims to show the differences between fuzzy sets and crisp sets. Various "
+        "terms used in the fuzzy sets and the grammar of fuzzy sets will be discussed in this course. Topics include how to model fuzzy sets, how to "
+        "handle with arithmetic of fuzzy quantities, and how to acquire operations with fuzzy relations."
+    ),
+}
+
+# Course 30
+drones_and_autonomous_systems = {
+    'course_number': 'AI 485',
+    'course_name': 'Drones and Autonomous Systems',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 477',
+    'description': (
+        "Introduction to unmanned aerial systems (UAS) including drones and autonomous unmanned aerial vehicles (UAV) with sensors including those "
+        "for obstacle avoidance, other instruments, and payloads that rely on complex algorithms and have various uses. The course aims at preparing "
+        "the students to understand the commercial and research capabilities of drones including sensors, platforms, navigation, power source, propulsion, "
+        "payloads, command, communication and control, range, altitude, speed, wide area surveillance. By the end of the course, the students will be able to "
+        "understand systems view of drones with hardware and software including data collection, storage, and analytical requirements, and systems life cycle "
+        "with needs and purpose: assessment, goals/objectives, requirements, testing and training."
+    ),
+}
+
+# Course 31
+internship = {
+    'course_number': 'AI 490',
+    'course_name': 'Internship',
+    'credit_hours': 3,
+    'lecture_hours': 0,
+    'lab_hours': 6,
+    'prerequisite': 'Passing 90 CHs or department approval',
+    'description': (
+        "A student is required to conduct training in one of the local organizations for at least six weeks for a period of 60 working days, "
+        "presents a report from the organization to describe the effectiveness of the practice according to the training regulations."
+    ),
+}
+
+# Course 32
+graduation_project_1 = {
+    'course_number': 'AI 491',
+    'course_name': 'Graduation Project (1)',
+    'credit_hours': 2,
+    'lecture_hours': 2,
+    'lab_hours': 0,
+    'prerequisite': 'Passing 90 CHs',
+    'description': (
+        "The graduation project provides a unique opportunity for students in Artificial Intelligence program to apply their knowledge of "
+        "the foundations, theory, and methods of AI and software development to address and provide solutions (i.e., developing software "
+        "applications) to problems in industry, government and the non-profit sector and other areas. The course activities focus on a two "
+        "semester-length project sponsored by a local organization if available. Typically, two to four students work together as a team on each "
+        "graduation project. Each team is supervised by a faculty mentor and projects typically progress through several phases. This course includes "
+        "the first stage of the graduation project where the student(s) should define, analyze the problem, and finally write a proposal. Then to "
+        "present it to a predetermined committee in the department. It includes weekly meetings with the supervisors."
+    ),
+}
+
+# Course 33
+graduation_project_2 = {
+    'course_number': 'AI 492',
+    'course_name': 'Graduation Project (2)',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'AI 491',
+    'description': (
+        "This is the second stage of the graduation projects, which includes the practical aspects which are design, implementation and testing "
+        "for the resulting project. Cooperative formative research, design, development, and testing of a sizable and realistic sociotechnical system, "
+        "i.e., a solution to a real-world problem that includes both technical and human components. Students work as a team with a client on a real-world "
+        "open-ended problem, and gain experience in Artificial Intelligence (problem definition, software development, iterative design), and in other fields "
+        "relevant to the problem. Both student participation in the classroom and effective teamwork outside the classroom are stressed. It includes weekly "
+        "meetings with the supervisors."
+    ),
+}
+
+# Course 34
+special_topics_1 = {
+    'course_number': 'AI 495-I',
+    'course_name': 'Special Topics in Artificial Intelligence (1)',
+    'credit_hours': 1,
+    'lecture_hours': 1,
+    'lab_hours': 0,
+    'prerequisite': 'Dept. Approval',
+    'description': (
+        "The department chooses a topic related to the field of Artificial Intelligence as needed. This course should cover state-of-the-art problems "
+        "and solutions in Artificial Intelligence."
+    ),
+}
+
+# Course 35
+special_topics_2 = {
+    'course_number': 'AI 495-II',
+    'course_name': 'Special Topics in Artificial Intelligence (2)',
+    'credit_hours': 2,
+    'lecture_hours': 2,
+    'lab_hours': 0,
+    'prerequisite': 'Dept. Approval',
+    'description': (
+        "The department chooses a topic related to the field of Artificial Intelligence as needed. This course should cover state-of-the-art problems "
+        "and solutions in Artificial Intelligence."
+    ),
+}
+
+# Course 36
+special_topics_3 = {
+    'course_number': 'AI 495-III',
+    'course_name': 'Special Topics in Artificial Intelligence (3)',
+    'credit_hours': 3,
+    'lecture_hours': 3,
+    'lab_hours': 0,
+    'prerequisite': 'Dept. Approval',
+    'description': (
+        "The department chooses a topic related to the field of Artificial Intelligence as needed. This course should cover state-of-the-art problems "
+        "and solutions in Artificial Intelligence."
+    ),
+}
